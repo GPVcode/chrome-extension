@@ -1,7 +1,17 @@
 //grab id
+let myLeads = ["www.awesomelead.com", "www.epiclead.com", "www.greatlead.com"]
 let inputBtn = document.getElementById("input-btn")
+const inputBtn = document.getElementById("input-btn")
+const ulEl = document.getElementById("ul-el")
 
-//add event listener to id and log message saying button is clicked from event listener
+//add event listener to id and log message saying button is clicked from event listener    
 inputBtn.addEventListener("click", function(){
-    console.log("Button clicked from addEventListener")
-})
+    myLeads.push(inputEl.value)
+    console.log(myLeads)
+}
+
+)
+
+for(let i = 0; i < myLeads.length; i++){
+    ulEl.textContent += myLeads + " "
+}
