@@ -1,5 +1,5 @@
 //grab id
-let myLeads = ["www.awesomelead.com", "www.epiclead.com", "www.greatlead.com"]
+let myLeads = ["www.awesomelead.com", "www.epiclead.com", "www.dweller.com", "www.greatlead.com"]
 let inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
@@ -13,5 +13,11 @@ inputBtn.addEventListener("click", function(){
 )
 
 for(let i = 0; i < myLeads.length; i++){
-    ulEl.innerHTML += "<li>" + myLeads[i] + "</li>"
+    //ulEl.innerHTML += "<li>" + myLeads[i] + "</li>"
+    //create element
+    const newEl = document.createElement("li");
+    //set text content
+    newEl.innerHTML = myLeads[i]
+    //append to ul
+    ulEl.appendChild(newEl)
 }
