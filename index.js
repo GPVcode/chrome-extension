@@ -1,5 +1,5 @@
 //grab id
-let myLeads = ["www.awesomelead.com", "www.epiclead.com", "www.dweller.com", "www.greatlead.com"]
+let myLeads = []
 let inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
@@ -8,16 +8,27 @@ const ulEl = document.getElementById("ul-el")
 inputBtn.addEventListener("click", function(){
     myLeads.push(inputEl.value)
     console.log(myLeads)
+    //clear input field after submit
+    inputEl.value = "";
+    renderLeads();
 }
 
 )
 
+function renderLeads(){
+let listItems = "";
 for(let i = 0; i < myLeads.length; i++){
-    //ulEl.innerHTML += "<li>" + myLeads[i] + "</li>"
-    //create element
-    const newEl = document.createElement("li");
-    //set text content
-    newEl.innerHTML = myLeads[i]
-    //append to ul
-    ulEl.appendChild(newEl)
+//Simplest way using innerHTML
+    listItems += "<li> <a target='_blank' href='"> + myLeads[i] +"'>" + myLeads[i] + "</a></li>"
+    console.log(listItems)
+//Second Way Using Create Element
+//create element
+    //const newEl = document.createElement("li");
+//set text content
+    //newEl.innerHTML = myLeads[i]
+//append to ul
+    //ulEl.appendChild(newEl)
+}
+//render the listItems inside the unordered list using ulEl.innerHTML
+ulEl.innerHTML = listItems;
 }
